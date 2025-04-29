@@ -1,131 +1,141 @@
-# Program Investasi Saham dan SBN
+# Sistem Manajemen Investasi Saham dan SBN
 
-Program ini adalah sistem sederhana berbasis Java untuk mengelola **investasi Saham** dan **SBN (Surat Berharga Negara)**, dengan dua jenis pengguna: **Admin** dan **Customer**.
-
----
-
-## Struktur Kelas
-
-### `SBN`
-Merepresentasikan Surat Berharga Negara.
-- **Attributes**: nama, bunga (%), jangka waktu (tahun), tanggal jatuh tempo, kuota nasional.
-- **Methods**:
-  - Getter untuk semua atribut.
-  - `hitungKuponBulanan(nominalInvestasi)`: menghitung kupon bulanan yang diterima.
-  - `tampilanInfo()`: menampilkan detail informasi SBN.
+Program ini adalah sistem simulasi sederhana berbasis Java untuk mengelola investasi **Saham** dan **SBN (Surat Berharga Negara)**. Ada dua jenis pengguna dalam sistem ini: **Admin** dan **Customer**.
 
 ---
 
-### `Stock`
-Merepresentasikan saham.
-- **Attributes**: kode saham (`String`), harga (`int`).
-- **Methods**:
-  - Getter dan setter untuk kode dan harga saham.
+## Daftar Isi
+- [Studi Kasus dan Skenario](#studi-kasus-dan-skenario)
+  - [1. Login sebagai Admin](#1-login-sebagai-admin)
+  - [2. Admin Menambah Saham dan SBN](#2-admin-menambah-saham-dan-sbn)
+  - [3. Admin Mengubah Harga Saham](#3-admin-mengubah-harga-saham)
+  - [4. Login sebagai Customer](#4-login-sebagai-customer)
+  - [5. Customer Membeli Saham](#5-customer-membeli-saham)
+  - [6. Customer Menjual Saham](#6-customer-menjual-saham)
+  - [7. Customer Membeli SBN](#7-customer-membeli-sbn)
+  - [8. Customer Menjual SBN](#8-customer-menjual-sbn)
+  - [9. Customer Melihat Portofolio](#9-customer-melihat-portofolio)
+- [Struktur Program](#struktur-program)
+- [Penutup](#penutup)
 
 ---
 
-### `InvestmentList`
-Menyimpan daftar saham dan SBN yang tersedia.
-- **Attributes**:
-  - Array `Stock[] stocks`
-  - Array `SBN[] sbns`
-- **Methods**:
-  - Tambah, tampilkan, hapus, dan ambil data `Stock` atau `SBN`.
+## Studi Kasus dan Skenario
+
+### 1. Login sebagai Admin
+
+**Penjelasan:**  
+Admin login menggunakan username `admin` dan password `admin123` untuk mengakses menu Admin.
+
+**Screenshot:**
+![Login Admin](screenshots/login_admin.png)
 
 ---
 
-### `CustomerInvestment`
-Menyimpan portofolio investasi customer.
-- **Attributes**:
-  - `Stock[] ownedStocks`, `SBN[] ownedSBNs`
-  - `int[] ownedStockShares`, `int[] ownedSBNUnits`
-- **Methods**:
-  - Membeli dan menjual saham/SBN.
-  - Menampilkan portofolio saat ini.
+### 2. Admin Menambah Saham dan SBN
+
+**Penjelasan:**  
+Admin dapat menambahkan saham baru dengan memasukkan kode saham dan harga awal. Untuk SBN, admin memasukkan nama, tingkat bunga, jangka waktu, tanggal jatuh tempo, dan kuota nasional.
+
+**Screenshot Saham:**
+![Tambah Saham](screenshots/tambah_saham.png)
+
+**Screenshot SBN:**
+![Tambah SBN](screenshots/tambah_sbn.png)
 
 ---
 
-## Alur Program
+### 3. Admin Mengubah Harga Saham
 
-### Login
-User memilih untuk login sebagai:
-- `admin / admin123` ➔ Masuk ke menu Admin
-- `cust / cust123` ➔ Masuk ke menu Customer
+**Penjelasan:**  
+Admin memilih saham yang ada lalu memperbarui harga saham tersebut.
 
-Jika login gagal, program meminta input ulang atau keluar.
-
----
-
-### Menu Admin
-#### 1. Kelola Saham
-- **Tambah Saham**: input kode dan harga saham.
-- **Ubah Harga Saham**: pilih saham lalu masukkan harga baru.
-
-#### 2. Kelola SBN
-- **Tambah SBN**: input nama, bunga, jangka waktu, tanggal jatuh tempo, dan kuota nasional.
-
-#### 3. Logout
-Kembali ke menu login.
+**Screenshot:**
+![Ubah Harga Saham](screenshots/ubah_harga_saham.png)
 
 ---
 
-### Menu Customer
-#### 1. Lihat Daftar Saham
-Menampilkan semua saham yang tersedia.
+### 4. Login sebagai Customer
 
-#### 2. Lihat Daftar SBN
-Menampilkan semua SBN yang tersedia.
+**Penjelasan:**  
+Customer login menggunakan username `cust` dan password `cust123` untuk mengakses menu investasi.
 
-#### 3. Beli Saham
-- Input nomor saham.
-- Input nominal uang.
-- Sistem menghitung berapa lembar saham yang terbeli.
-
-#### 4. Jual Saham
-- Input saham dan jumlah lembar yang ingin dijual.
-
-#### 5. Beli SBN
-- Input nomor SBN.
-- Input jumlah unit yang ingin dibeli.
-
-#### 6. Jual SBN
-- Input SBN dan jumlah unit yang ingin dijual.
-
-#### 7. Lihat Portofolio
-Menampilkan investasi saham dan SBN yang dimiliki, serta total nilainya.
-
-#### 8. Logout
-Kembali ke menu login.
+**Screenshot:**
+![Login Customer](screenshots/login_customer.png)
 
 ---
 
-## Catatan Tambahan
+### 5. Customer Membeli Saham
 
-- Harga saham bisa berubah saat diubah admin.
-- Pendapatan jual SBN disimulasikan dengan menggunakan bunga sebagai nilai satuan (untuk kesederhanaan).
-- Setiap pembelian SBN mengecek apakah melebihi kuota nasional.
-- Sistem login berbasis teks biasa (belum terenkripsi).
-- Array investasi dibatasi (`max 10`) untuk saham dan SBN per user.
+**Penjelasan:**  
+Customer memilih saham berdasarkan daftar yang tersedia dan memasukkan nominal uang untuk membeli saham tersebut.
+
+**Screenshot:**
+![Beli Saham](screenshots/beli_saham.png)
 
 ---
 
-## Contoh Output
-```bash
---- LOGIN ---
-Username: admin
-Password: admin123
+### 6. Customer Menjual Saham
 
---- MENU ADMIN ---
-1. Saham
-2. SBN
-3. Logout
-Pilihan: 1
+**Penjelasan:**  
+Customer memilih saham yang sudah dimiliki dan memasukkan jumlah lembar saham yang ingin dijual.
 
---- MENU ADMIN > SAHAM ---
-1. Tambah Saham
-2. Ubah Harga Saham
-3. Kembali
-Pilihan: 1
-Kode saham: BBCA
-Harga saham: 8000
-Saham berhasil ditambahkan.
+**Screenshot:**
+![Jual Saham](screenshots/jual_saham.png)
+
+---
+
+### 7. Customer Membeli SBN
+
+**Penjelasan:**  
+Customer memilih SBN berdasarkan daftar yang tersedia dan memasukkan jumlah unit yang ingin dibeli.
+
+**Screenshot:**
+![Beli SBN](screenshots/beli_sbn.png)
+
+---
+
+### 8. Customer Menjual SBN
+
+**Penjelasan:**  
+Customer memilih SBN yang sudah dimiliki dan memasukkan jumlah unit yang ingin dijual.
+
+**Screenshot:**
+![Jual SBN](screenshots/jual_sbn.png)
+
+---
+
+### 9. Customer Melihat Portofolio
+
+**Penjelasan:**  
+Customer dapat melihat seluruh saham dan SBN yang dimiliki beserta nilai totalnya.
+
+**Screenshot:**
+![Lihat Portofolio](screenshots/lihat_portofolio.png)
+
+---
+
+## Struktur Program
+
+- **Login Sistem**: Autentikasi berbasis username/password.
+- **Admin Menu**:
+  - Tambah Saham
+  - Tambah SBN
+  - Ubah Harga Saham
+- **Customer Menu**:
+  - Lihat Saham/SBN
+  - Beli/Jual Saham
+  - Beli/Jual SBN
+  - Lihat Portofolio
+- **OOP Design**:
+  - Class: `Stock`, `SBN`, `InvestmentList`, `CustomerInvestment`.
+
+---
+
+## Penutup
+
+Program ini dibuat untuk mensimulasikan pengelolaan investasi Saham dan SBN dengan pendekatan berbasis **Object-Oriented Programming** (OOP) menggunakan Java.  
+README ini menyediakan dokumentasi langkah-langkah skenario penggunaan lengkap dengan screenshot untuk memperjelas proses.
+
+---
+
