@@ -13,7 +13,7 @@ Program ini adalah sistem simulasi sederhana berbasis Java untuk mengelola inves
   - [5. Customer Membeli Saham](#5-customer-membeli-saham)
   - [6. Customer Menjual Saham](#6-customer-menjual-saham)
   - [7. Customer Membeli SBN](#7-customer-membeli-sbn)
-  - [8. Customer Menjual SBN](#8-customer-menjual-sbn)
+  - [8. Customer Simulasi SBN](#8-customer-simulasi-sbn)
   - [9. Customer Melihat Portofolio](#9-customer-melihat-portofolio)
 - [Struktur Program](#struktur-program)
 - [Penutup](#penutup)
@@ -125,7 +125,7 @@ Customer dapat melihat seluruh saham dan SBN yang dimiliki beserta nilai totalny
 - **Customer Menu**:
   - Lihat Saham/SBN
   - Beli/Jual Saham
-  - Beli/Jual SBN
+  - Simulasi SBN
   - Lihat Portofolio
 - **OOP Design**:
   - Class: `Stock`, `SBN`, `InvestmentList`, `CustomerInvestment`.
