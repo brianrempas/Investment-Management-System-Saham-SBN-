@@ -16,6 +16,7 @@ Program ini adalah sistem simulasi sederhana berbasis Java untuk mengelola inves
   - [8. Customer Simulasi SBN](#8-customer-simulasi-sbn)
   - [9. Customer Melihat Portofolio](#9-customer-melihat-portofolio)
 - [Struktur Program](#struktur-program)
+- [Diagram Uml](#diagram-uml)
 - [Penutup](#penutup)
 
 ---
@@ -129,6 +130,12 @@ Customer dapat melihat seluruh saham dan SBN yang dimiliki beserta nilai totalny
   - Lihat Portofolio
 - **OOP Design**:
   - Class: `Stock`, `SBN`, `InvestmentList`, `CustomerInvestment`.
+
+---
+
+## Diagram UML
+
+![UML](screenshots/UMLSAHAMSBN.png)
 
 ---
 
