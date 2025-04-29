@@ -95,13 +95,13 @@ Customer memilih SBN berdasarkan daftar yang tersedia dan memasukkan jumlah unit
 
 ---
 
-### 8. Customer Menjual SBN
+### 8. Customer Simulasi SBN
 
 **Penjelasan:**  
-Customer memilih SBN yang sudah dimiliki dan memasukkan jumlah unit yang ingin dijual.
+Customer dapat mensimulasikan investasi SBN untuk melihat potensi keuntungan berdasarkan jumlah unit dan waktu tertentu.
 
 **Screenshot:**
-![Jual SBN](screenshots/jual_sbn.png)
+![Simulasi_SBN](screenshots/simulasi_sbn.png)
 
 ---
 
